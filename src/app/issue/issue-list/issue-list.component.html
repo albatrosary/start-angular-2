@@ -1,0 +1,8 @@
+<div ngClass="issues" *ngFor="let issue of issues; let i = index">
+  <app-issue-detail
+    [rownum]="i"
+    [title]="issue.title"
+    [desc]="issue.desc"
+    (on-delete)="onDelete(i)">
+  ></app-issue-detail>
+</div>
