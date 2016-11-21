@@ -71,7 +71,7 @@ issue.component.html は
 
 <div ngClass="issues" *ngFor="let issue of issues; let i = index">
   <div ngClass="row">{{i+1}}</div>
-  <button (click)="onClick($event)">削除</button>
+  <button (click)="onDelete(i)">削除</button>
   <p>{{issue.title}}</p>
   <pre>{{issue.desc}}</pre>
 </div>
