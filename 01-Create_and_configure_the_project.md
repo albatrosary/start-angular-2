@@ -327,3 +327,46 @@ All end-to-end tests pass.
 $ 
 ```
 
+## ビルド
+
+テストが完了したらリリースモジュールを作成します。リリースモジュールの作成には2種類あります。
+
+* JiT(Just in Time)
+* AoT(Ahead of Time)
+
+AoTとJiTの違いは、タイミングとツーリングの問題です。AoTを使用すると、1組のライブラリを使用してビルド時にコンパイラが1回実行されます。JiTを使用すると、実行時に毎回異なるライブラリのセットを使用して各ユーザが実行します。
+
+通常ビルドは次のように行います
+
+```bash
+$ ng build
+```
+
+「dist」ディレクトリにファイルが生成されます。
+
+```bash
+$ tree
+.
+├── favicon.ico
+├── index.html
+├── inline.js
+├── inline.map
+├── main.bundle.js
+├── main.map
+├── styles.bundle.js
+└── styles.map
+
+0 directories, 8 files
+```
+
+AoTビルドの場合は引数を付け加え行います。
+
+```bash
+$ ng build --aot true
+```
+
+同様に
+
+```
+```
+
