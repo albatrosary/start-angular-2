@@ -138,3 +138,133 @@ $ npm -v
 ```
 
 となります。
+
+## Windows 7
+
+注) コマンドを実行する際はWindows PowerShellで行うこと（管理者として実行）
+
+### Git のインストール
+
+* Gitのダウンロード
+
+```
+https://git-for-windows.github.io/
+```
+
+* Setup時に以下を選択してインストールする
+
+```
+・ Run Git from the Windows Command Prompt
+・ Checkout as-is, commit as-is
+・ Use Windows’s default console windows
+```
+
+### nodistのインストール
+
+* パッケージ管理、パージョン管理ツールのインストール
+
+```
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+* nodistのインストール
+
+```
+cinst nodist -y
+```
+
+* PowerShellを開き直し、nodeのインストール、npmのバージョンアップする
+
+```
+nodist -v
+nodist 6.7.0
+nodist npm 3.10.8
+```
+
+* 設定確認
+
+```
+nodist
+> 6.7.0 (global: 6.7.0)
+nodist npm
+> 3.10.8  (global: 3.10.8)
+```
+
+### .NET Framework 4.5.1 のインストール※入っていれば実施不要
+
+* .NET Frameworkをインストール
+
+```
+http://www.microsoft.com/en-us/download/details.aspx?id=40773
+```
+
+### Rubyのインストール（2系）
+
+* 2系のRubyのインストール
+
+```
+http://rubyinstaller.org/
+```
+
+### Build Toolsのインストール
+
+コマンドを実行し、エラーなく終了すればOK
+
+```
+npm install --global --production windows-build-tools
+```
+
+### windows10 SDKのインストール
+
+* Visual C++ Build ToolsのEXEファイルのダウンロード
+* EXEファイルの実行
+* windows10 SDKにチェックを追加しインストール
+
+```
+http://go.microsoft.com/fwlink/?LinkId=691126
+```
+
+### 環境変数にpythonの設定
+
+windowsの環境変数にBuild Toolsでインストールされたpythonのパスを設定
+
+```
+C:\Users\ユーザ名\.windows-build-tools\python27
+```
+注) 必要に応じてPATHを変更
+
+### npmのオプションの設定
+
+npmのオプションを設定する
+
+```
+npm config set python python.exeのPATH
+npm config set msvs_version 2015
+```
+
+## angular-cliのインストール
+
+angular-cliのインストールする。   
+
+ng --helpが実行できればインストール完了
+
+```
+$ npm install -g angular-cli
+$ ng --help
+```
+
+## angular-cliを使ったプロジェクトの生成
+
+プロジェクトの生成
+
+```
+$ ng new Handson
+$ cd Handson
+$ ng serve
+```
+
+ブラウザで下記URLが表示されることを確認
+
+```
+http://localhost:4200/
+```
