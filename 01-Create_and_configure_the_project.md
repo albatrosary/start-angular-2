@@ -365,8 +365,21 @@ AoTビルドの場合は引数を付け加え行います。
 $ ng build --aot true
 ```
 
-同様に
+同様の結果になりますが、ファイルサイズはいくらか小さくなっていて最適化されています。
 
-```
-```
+```bash
+$ tree
+.
+├── 0.map
+├── favicon.ico
+├── index.html
+├── inline.js
+├── inline.map
+├── main.bundle.js
+├── main.map
+├── styles.bundle.js
+└── styles.map
 
+0 directories, 9 files
+$ 
+```
