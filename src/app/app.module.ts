@@ -16,6 +16,7 @@ import { IssueStore } from './issue/issue.store';
 import { IssueDetailComponent } from './issue/issue-detail/issue-detail.component';
 import { IssueInputComponent } from './issue/issue-input/issue-input.component';
 import { IssueListComponent } from './issue/issue-list/issue-list.component';
+import { IssueUpdateComponent } from './issue/issue-update/issue-update.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IssueListComponent } from './issue/issue-list/issue-list.component';
     MarkdownPipe,
     IssueDetailComponent,
     IssueInputComponent,
-    IssueListComponent
+    IssueListComponent,
+    IssueUpdateComponent
   ],
   imports: [
     BrowserModule,

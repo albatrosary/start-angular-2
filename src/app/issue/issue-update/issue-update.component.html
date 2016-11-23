@@ -1,0 +1,6 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input name="id" [(ngModel)]="id" required placeholder="id">
+  <input name="title" [(ngModel)]="title" required placeholder="title">
+  <textarea name="desc" [(ngModel)]="desc" required placeholder="desc"></textarea>
+  <button type=submit [disabled]="!f.form.valid">更新</button>
+</form>

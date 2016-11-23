@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-issue-detail',
@@ -22,9 +23,15 @@ export class IssueDetailComponent implements OnInit {
     this.onDelete.emit($event);
   }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  gotoUpdate(): void {
+    this.router.navigate(['/issue/update', this.rownum]);
   }
 
 }

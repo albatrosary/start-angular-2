@@ -31,8 +31,29 @@ export class IssueStore {
       .catch(this.handleError);
   }
 
+  public update(id: number, issue: Issue): void {
+    let udata = {
+      id: id,
+      issue: JSON.stringify(issue)
+    }
+    this.http.put(this.url, udata, {headers: this.headers})
+      .toPromise()
+      .catch(this.handleError);
+  }
+
   public allList(): Promise<Issue[]> {
     return this.http.get(this.url)
+      .toPromise()
+      .then(response => {
+        this.issues = response.json()
+        return this.issues
+      })
+      .catch(this.handleError);
+  }
+
+  public getIssue(id: number): Promise<Issue> {
+    console.log(id);
+    return this.http.get(this.url+`/${id}`)
       .toPromise()
       .then(response => {
         this.issues = response.json()

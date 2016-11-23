@@ -26,5 +26,4 @@ export class IssueListComponent implements OnInit {
     this.issueStore.delete(index)
       .catch(error => console.log(error))
   }
-
 }
