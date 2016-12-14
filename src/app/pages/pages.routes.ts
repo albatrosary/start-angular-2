@@ -11,7 +11,7 @@ const pagesRoutes: Routes = [
   { path: 'pages',
     component: PagesComponent,
     children: [
-      { path: '', component: TopComponent },
+      { path: '', redirectTo: 'top', pathMatch: 'full'},
       { path: 'top', component: TopComponent },
       { path: 'issue', component: IssueComponent },
       { path: 'issue/update/:id', component: IssueUpdateComponent },

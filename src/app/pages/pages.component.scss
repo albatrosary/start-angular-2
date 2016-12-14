@@ -1,0 +1,27 @@
+div {
+  display: flex;
+  padding: 0 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  padding: 0 10px 0 10px;
+}
+
+a {
+  padding: 0 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #888888;
+}
+
+.active {
+  color: #333333;
+  border-bottom: 2px solid #333333;
+}

@@ -1,0 +1,28 @@
+@import './../assets/properties';
+
+ul {
+  display: flex;
+  margin: 24px 0 24px 0;
+  align-items: flex-end;
+}
+
+h1 {
+  width: 100%
+}
+
+div {
+  display: flex;
+  padding: 0 3px;
+  background-color: $corporate-color;
+  color: #ffffff;
+}
+
+li {
+  list-style: none;
+  padding: 0 5px 0 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
