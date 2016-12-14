@@ -21,9 +21,9 @@ export class IssueListComponent implements OnInit {
       .then(response => this.issues = response)
       .catch(error => console.log(error));
   }
-  
+
   public onDelete(index: number): void {
     this.issueStore.delete(index)
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   }
 }

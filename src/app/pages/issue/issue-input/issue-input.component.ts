@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { IssueStore } from '../issue.store'
+import { IssueStore } from '../issue.store';
 
 @Component({
   selector: 'app-issue-input',
@@ -17,13 +17,13 @@ export class IssueInputComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   public onSubmit(form: NgForm): void {
 
     const issue = {
       title: form.value.title,
       desc: form.value.desc
-    }
+    };
 
     this.issueStore.add(issue);
 

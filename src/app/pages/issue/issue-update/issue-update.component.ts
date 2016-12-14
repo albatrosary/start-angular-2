@@ -14,9 +14,11 @@ import { Issue } from '../issue';
 })
 export class IssueUpdateComponent implements OnInit {
 
-  private id: number;
-  private title: string;
-  private desc: string;
+  id: number;
+
+  title: string;
+
+  desc: string;
 
   constructor(
     private router: Router,
@@ -28,25 +30,25 @@ export class IssueUpdateComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => {
-        this.id = +params['id'];  
-        return this.issueStore.getIssue(this.id)
+        this.id = +params['id'];
+        return this.issueStore.getIssue(this.id);
       })
       .subscribe(issue => {
         this.title = issue.title;
         this.desc = issue.desc;
       });
   }
-  
+
   public onSubmit(form: NgForm): void {
 
     const issue = {
       title: form.value.title,
       desc: form.value.desc
-    }
+    };
 
     this.issueStore.update(form.value.id, issue);
 
-    this.gotoIssue(); 
+    this.gotoIssue();
   }
 
   private gotoIssue() {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-issue-detail',
@@ -9,18 +9,18 @@ import { Router } from '@angular/router'
 export class IssueDetailComponent implements OnInit {
 
   @Input('rownum')
-  private rownum: number;
+  rownum: number;
 
   @Input('title')
-  private title: string;
+  title: string;
 
   @Input('desc')
-  private desc: string;
+  desc: string;
 
-  @Output('on-delete')
-  private onDelete = new EventEmitter();
+  @Output() appOnDelete = new EventEmitter();
+
   public onClick($event: any): void {
-    this.onDelete.emit($event);
+    this.appOnDelete.emit($event);
   }
 
   constructor(

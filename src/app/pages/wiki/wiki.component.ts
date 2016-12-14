@@ -13,5 +13,4 @@ export class WikiComponent implements OnInit {
   ngOnInit() {
     this.wiki = localStorage.getItem('amke');
   }
-
 }
