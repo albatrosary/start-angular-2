@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-issue-detail',
   templateUrl: './issue-detail.component.html',
-  styleUrls: ['./issue-detail.component.css']
+  styleUrls: ['./issue-detail.component.scss']
 })
 export class IssueDetailComponent implements OnInit {
 

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-wiki',
   templateUrl: './wiki.component.html',
-  styleUrls: ['./wiki.component.css']
+  styleUrls: ['./wiki.component.scss']
 })
 export class WikiComponent implements OnInit {
   wiki: string;
