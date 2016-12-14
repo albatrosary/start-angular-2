@@ -1,0 +1,12 @@
+@import './../../assets/properties';
+
+p {
+  display: flex;
+  font-size: 10rem;
+  justify-content: center;
+  align-items: center;
+  color: $corporate-color;
+  background-image: url(./assets/images/angular.png);
+  background-repeat: no-repeat;
+  background-position: center center; 
+}

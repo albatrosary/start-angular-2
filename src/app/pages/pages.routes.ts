@@ -12,10 +12,10 @@ const pagesRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: '', redirectTo: 'top', pathMatch: 'full'},
-      { path: 'top', component: TopComponent },
-      { path: 'issue', component: IssueComponent },
-      { path: 'issue/update/:id', component: IssueUpdateComponent },
-      { path: 'wiki', component: WikiComponent }
+      { path: 'top', component: TopComponent, data: {title: 'Top'} },
+      { path: 'issue', component: IssueComponent, data: {title: 'Issue'} },
+      { path: 'issue/update/:id', component: IssueUpdateComponent, data: {title: 'Issue Update'} },
+      { path: 'wiki', component: WikiComponent, data: {title: 'Wiki'} }
     ]
   }
 ];
