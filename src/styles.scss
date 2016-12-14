@@ -3,3 +3,27 @@
 body {
   margin: 0;
 }
+
+form {
+  margin: 5px;
+}
+
+button {
+	width: 100px;
+	text-align: center;
+	line-height: 32px;
+	outline: none;
+  background-color: #ffffff;
+  border: 2px solid #333;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input, textarea {
+  background-color: #ffffff;
+  border: 2px solid #333;
+  font-size: 1.2rem;
+  padding: 7px 0;
+  margin: 3px 0;
+  box-sizing: border-box;
+}
