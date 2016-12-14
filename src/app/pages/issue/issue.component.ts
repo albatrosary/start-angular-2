@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
-import { Issue } from './issue';
-import { IssueStore } from './issue.store';
 
 @Component({
   selector: 'app-issue',
@@ -11,9 +7,9 @@ import { IssueStore } from './issue.store';
 })
 export class IssueComponent implements OnInit {
 
-  constructor (
-  ) {}
+  constructor() { }
 
   ngOnInit() {
   }
+
 }

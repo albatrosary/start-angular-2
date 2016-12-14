@@ -31,7 +31,7 @@ export class IssueDetailComponent implements OnInit {
   }
 
   gotoUpdate(): void {
-    this.router.navigate(['/issue/update', this.rownum]);
+    this.router.navigate(['/pages/issue/update', this.rownum]);
   }
 
 }

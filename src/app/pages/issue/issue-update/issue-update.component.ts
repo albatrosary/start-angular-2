@@ -50,7 +50,7 @@ export class IssueUpdateComponent implements OnInit {
   }
 
   private gotoIssue() {
-    this.router.navigate(['/issue']);
+    this.router.navigate(['./pages/issue']);
   }
 
 }
