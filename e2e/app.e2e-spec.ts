@@ -9,6 +9,6 @@ describe('project-name App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app sample!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
