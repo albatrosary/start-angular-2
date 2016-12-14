@@ -2,7 +2,7 @@
 
 ul {
   display: flex;
-  margin: 24px 0 24px 0;
+  margin: 24px 0;
   align-items: flex-end;
 }
 
@@ -14,7 +14,7 @@ div {
   display: flex;
   padding: 0 3px;
   background-color: $corporate-color;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 li {
@@ -24,5 +24,5 @@ li {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: #FFFFFF;
 }
