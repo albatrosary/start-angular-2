@@ -24,6 +24,6 @@ import { pagesRouting, pagesRoutingProviders }  from './pages.routes';
   ],
   providers: [
     pagesRoutingProviders
-  ],
+  ]
 })
 export class PagesModule { }

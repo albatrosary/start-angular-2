@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let menu of links; let i = index">
       <a routerLink="{{menu.url}}"
-        [@state]="menu.state" (click)="onClick(i)">
+        [@menuState]="menu.state" (click)="onClick(i)">
         {{menu.name}}
       </a>
     </li>

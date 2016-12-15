@@ -5,7 +5,7 @@ import { Component, OnInit, Input, trigger, state, style, transition, animate } 
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
   animations: [
-    trigger('state', [
+    trigger('menuState', [
       state('inactive', style({
         transform: 'scale(1)'
       })),
@@ -20,33 +20,32 @@ import { Component, OnInit, Input, trigger, state, style, transition, animate } 
 })
 export class PagesComponent implements OnInit {
 
-  state: string;
+  menuState: string;
 
   links = [{
     url: 'top',
     name: 'Top',
     state: 'active'
-  },{
+  }, {
     url: 'issue',
     name: 'Issue',
-    state: 'inactive' 
-  },{
+    state: 'inactive'
+  }, {
     url: 'wiki',
     name: 'Wiki',
-    state: 'inactive' 
+    state: 'inactive'
   }];
-  
+
   constructor() {
-    this.state = 'inactive';
+    this.menuState = 'inactive';
   }
 
   ngOnInit() {
   }
 
-  onClick(i) {
-    for (let i=0; i<this.links.length; i++) {
-      this.links[i].state = 'inactive';
-    }
-    this.links[i].state = 'active';
+  onClick(i: number) {
+    this.links.forEach(
+      (element, index, array) => element.state = (i === index) ? 'active' : 'inactive'
+    );
   }
 }
