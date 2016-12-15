@@ -1,5 +1,0 @@
-# lint
-
-## tslint
-
-## sasslint
