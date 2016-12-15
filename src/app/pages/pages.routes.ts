@@ -8,7 +8,7 @@ import { IssueUpdateComponent } from './issue/issue-update/issue-update.componen
 import { WikiComponent } from './wiki/wiki.component';
 
 const pagesRoutes: Routes = [
-  { path: 'pages',
+  { path: '',
     component: PagesComponent,
     children: [
       { path: '', redirectTo: 'top', pathMatch: 'full'},

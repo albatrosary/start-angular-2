@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { PagesModule } from './pages/pages.module';
+// import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     HttpModule,
-    PagesModule,
+    // PagesModule,
     routing
   ],
   providers: [
