@@ -1,8 +1,11 @@
 <div>
   <ul>
-    <li><a routerLink="top" [routerLinkActive]="['active']">Top</a></li>
-    <li><a routerLink="issue" [routerLinkActive]="['active']">Issue</a></li>
-    <li><a routerLink="wiki" [routerLinkActive]="['active']">Wiki</a></li>
+    <li *ngFor="let menu of links; let i = index">
+      <a routerLink="{{menu.url}}"
+        [@state]="menu.state" (click)="onClick(i)">
+        {{menu.name}}
+      </a>
+    </li>
   </ul>
 </div>
 <router-outlet></router-outlet>

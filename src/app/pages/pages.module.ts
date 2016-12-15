@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { IssueModule } from './issue/issue.module';
 import { WikiModule } from './wiki/wiki.module';
@@ -12,6 +13,7 @@ import { pagesRouting, pagesRoutingProviders }  from './pages.routes';
 @NgModule({
   imports: [
     FormsModule,
+    CommonModule,
     pagesRouting,
     IssueModule,
     WikiModule
