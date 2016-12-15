@@ -1,11 +1,9 @@
-<div>
-  <ul>
-    <li *ngFor="let menu of links; let i = index">
-      <a routerLink="{{menu.url}}"
-        [@menuState]="menu.state" (click)="onClick(i)">
-        {{menu.name}}
-      </a>
-    </li>
-  </ul>
-</div>
+<ul>
+  <li *ngFor="let menu of links; let i = index">
+    <a routerLink="{{menu.url}}"
+      [@menuState]="menu.state" (click)="onClick(i)">
+      {{menu.name}}
+    </a>
+  </li>
+</ul>
 <router-outlet></router-outlet>

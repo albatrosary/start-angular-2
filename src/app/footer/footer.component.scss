@@ -1,10 +1,10 @@
-@import './../../assets/properties';
+@import '../shared/properties';
 
 footer {
-  margin: 5px 0 5px 0;
-  padding: 5px 0 5px 0;
+  margin: 5px 0;
+  padding: 5px 0;
   text-align: center;
   font-size: 0.8rem;
   background-color: $corporate-color;
-  color: #FFFFFF;
+  color: $font-color;
 }

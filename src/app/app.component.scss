@@ -1,4 +1,4 @@
-@import './../assets/properties';
+@import './shared/properties';
 
 ul {
   display: flex;
@@ -14,15 +14,15 @@ div {
   display: flex;
   padding: 0 3px;
   background-color: $corporate-color;
-  color: #FFFFFF;
+  color: $font-color;
 }
 
 li {
   list-style: none;
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
 }
 
 a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: $font-color;
 }
