@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer , SafeHtml } from '@angular/platform-browser';
+import { Pipe, PipeTransform } from　'@angular/core';
+import { DomSanitizer, SafeHtml } from　'@angular/platform-browser';
 
 import * as marked from 'marked';
 
@@ -12,8 +12,8 @@ export class MarkdownPipe implements PipeTransform {
 
   transform(value: any, args?: any): SafeHtml {
     if ( value === undefined || value === null ) {
-      return '';
-    };
+      return　'';
+    }
     localStorage.setItem('amke', value);
     return this.sanitizer.bypassSecurityTrustHtml(marked(value));
   }

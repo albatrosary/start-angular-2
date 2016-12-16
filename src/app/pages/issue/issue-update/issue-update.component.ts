@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
-import { IssueStore } from '../issue.store';
+import { IssueService } from '../issue.service';
 import { Issue } from '../issue';
 
 @Component({
@@ -23,7 +23,7 @@ export class IssueUpdateComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private issueStore: IssueStore
+    private issueService: IssueService
   ) {
   }
 
@@ -31,7 +31,7 @@ export class IssueUpdateComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => {
         this.id = +params['id'];
-        return this.issueStore.getIssue(this.id);
+        return this.issueService.getIssue(this.id);
       })
       .subscribe(issue => {
         this.title = issue.title;
@@ -46,7 +46,7 @@ export class IssueUpdateComponent implements OnInit {
       desc: form.value.desc
     };
 
-    this.issueStore.update(form.value.id, issue);
+    this.issueService.update(form.value.id, issue);
 
     this.gotoIssue();
   }

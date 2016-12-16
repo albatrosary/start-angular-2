@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from'@angular/core';
+import { NgForm } from'@angular/forms';
 
-import { IssueStore } from '../issue.store';
+import { IssueService } from'../issue.service';
 
 @Component({
   selector: 'app-issue-input',
@@ -11,7 +11,7 @@ import { IssueStore } from '../issue.store';
 export class IssueInputComponent implements OnInit {
 
   constructor(
-    private issueStore: IssueStore
+    private issueService: IssueService
   ) {
   }
 
@@ -25,7 +25,7 @@ export class IssueInputComponent implements OnInit {
       desc: form.value.desc
     };
 
-    this.issueStore.add(issue);
+    this.issueService.add(issue);
 
     form.reset();
   }

@@ -8,7 +8,7 @@ import { IssueInputComponent } from './issue-input/issue-input.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueUpdateComponent } from './issue-update/issue-update.component';
 
-import { IssueStore } from './issue.store';
+import { IssueService } from './issue.service';
 
 @NgModule({
   imports: [
@@ -22,6 +22,6 @@ import { IssueStore } from './issue.store';
     IssueListComponent,
     IssueUpdateComponent
   ],
-  providers: [IssueStore]
+  providers: [IssueService]
 })
 export class IssueModule { }

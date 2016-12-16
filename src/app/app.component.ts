@@ -20,6 +20,7 @@ export class AppComponent {
       }
     });
   }
+
   getTitle(state, parent) {
     let data = [];
     if (parent && parent.snapshot.data && parent.snapshot.data.title) {
@@ -29,6 +30,7 @@ export class AppComponent {
     if (state && parent) {
       data.push(... this.getTitle(state, state.firstChild(parent)));
     }
+
     return data;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from'@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,10 +17,14 @@ export class IssueDetailComponent implements OnInit {
   @Input('desc')
   desc: string;
 
-  @Output() appOnDelete = new EventEmitter();
-
+  @Output()
+  private onDelete = new EventEmitter();
   public onClick($event: any): void {
-    this.appOnDelete.emit($event);
+    this.onDelete.emit($event);
+  }
+
+  public gotoUpdate(): void {
+    this.router.navigate(['/pages/issue/update', this.rownum]);
   }
 
   constructor(
@@ -28,10 +32,6 @@ export class IssueDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
-
-  gotoUpdate(): void {
-    this.router.navigate(['/pages/issue/update', this.rownum]);
   }
 
 }

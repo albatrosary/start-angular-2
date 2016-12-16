@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Issue } from '../issue';
-import { IssueStore } from '../issue.store';
+import { IssueService } from '../issue.service';
 
 @Component({
   selector: 'app-issue-list',
@@ -10,20 +10,21 @@ import { IssueStore } from '../issue.store';
 })
 export class IssueListComponent implements OnInit {
 
-  private issues: Issue[];
+  issues: Issue[];
 
   constructor (
-    private issueStore: IssueStore
+    private issueService: IssueService
   ) {}
 
   ngOnInit() {
-    this.issueStore.allList()
+    this.issueService.allList()
       .then(response => this.issues = response)
       .catch(error => console.log(error));
   }
 
   public onDelete(index: number): void {
-    this.issueStore.delete(index)
+    this.issueService.delete(index)
       .catch(error => console.log(error));
   }
+
 }

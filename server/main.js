@@ -4,9 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const server = require('http').createServer(app);
-const port =  process.env.PORT || 3000;
-
-const fs=require("fs");
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
@@ -43,7 +41,6 @@ app.put('/api/issues', function(req, res) {
   let id = req.body.id;
   let issue = req.body.issue;
   items[id] = JSON.parse(issue);
-  console.log(items);
   res.status(200).json();
 });
 

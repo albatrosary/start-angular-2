@@ -3,7 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { MarkdownPipe } from './markdown.pipe';
 
-describe('Pipe: Markdown', () => {
+describe('MarkdownPipe', () => {
   it('create an instance', () => {
     let pipe = new MarkdownPipe();
     expect(pipe).toBeTruthy();
