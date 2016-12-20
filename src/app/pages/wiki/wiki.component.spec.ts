@@ -3,7 +3,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 import { WikiComponent } from './wiki.component';
+import { MarkdownPipe } from './markdown.pipe';
 
 describe('WikiComponent', () => {
   let component: WikiComponent;
@@ -11,7 +15,11 @@ describe('WikiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WikiComponent ]
+      imports: [ BrowserModule, FormsModule ],
+      declarations: [
+        WikiComponent,
+        MarkdownPipe
+      ]
     })
     .compileComponents();
   }));

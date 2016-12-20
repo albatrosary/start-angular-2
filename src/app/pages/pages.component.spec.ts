@@ -3,7 +3,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { APP_BASE_HREF } from '@angular/common';
+
 import { PagesComponent } from './pages.component';
+
+class MockRouter { public navigate() {}; }
 
 describe('PagesComponent', () => {
   let component: PagesComponent;
@@ -11,6 +17,11 @@ describe('PagesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [
+        { provide: Router,  useClass: MockRouter },
+        { provide: APP_BASE_HREF, useValue : '/' }
+      ],
+      imports: [ RouterTestingModule ],
       declarations: [ PagesComponent ]
     })
     .compileComponents();

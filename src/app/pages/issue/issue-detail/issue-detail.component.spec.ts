@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import { IssueDetailComponent } from './issue-detail.component';
 
 describe('IssueDetailComponent', () => {
@@ -11,7 +13,8 @@ describe('IssueDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IssueDetailComponent ]
+      declarations: [ IssueDetailComponent ],
+      providers: [ Router ]
     })
     .compileComponents();
   }));
