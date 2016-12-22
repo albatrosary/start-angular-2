@@ -19,7 +19,7 @@ export class IssueDetailComponent implements OnInit {
 
   @Output()
   private onDelete = new EventEmitter();
-  public onClick($event: any): void {
+  public onClick($event: KeyboardEvent): void {
     this.onDelete.emit($event);
   }
 

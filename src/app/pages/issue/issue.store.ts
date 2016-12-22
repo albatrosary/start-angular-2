@@ -52,8 +52,7 @@ export class IssueStore {
       .catch(this.handleError);
   }
 
-  public getIssue(id: number): Promise<Issue> {
-    console.log(id);
+  public getIssue(id: number): Promise<Issue[]> {
     return this.http.get(this.url + `/${id}`)
       .toPromise()
       .then(response => {
