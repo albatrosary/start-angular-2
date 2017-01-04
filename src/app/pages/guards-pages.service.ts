@@ -10,7 +10,7 @@ import {
 import { PagesComponent } from './pages.component';
 
 @Injectable()
-export class GuardsPagesService implements CanActivate, CanActivateChild, CanDeactivate<PagesComponent>, Resolve<PagesComponent>, CanLoad {
+export class GuardsPagesService implements CanActivate, CanActivateChild, CanDeactivate<PagesComponent>, CanLoad {
 
   constructor() { }
 
@@ -26,11 +26,6 @@ export class GuardsPagesService implements CanActivate, CanActivateChild, CanDea
 
   canDeactivate(): boolean {
     console.log('GuardsPagesService.canDeactivate()');
-    return true;
-  }
-
-  resolve(): boolean {
-    console.log('GuardsPagesService.resolve()');
     return true;
   }
 

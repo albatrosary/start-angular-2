@@ -10,7 +10,7 @@ import {
 import { WikiComponent } from './wiki.component';
 
 @Injectable()
-export class GuardsWikiService implements CanActivate, CanActivateChild, CanDeactivate<WikiComponent>, Resolve<WikiComponent>, CanLoad {
+export class GuardsWikiService implements CanActivate, CanActivateChild, CanDeactivate<WikiComponent>, CanLoad {
 
   constructor() { }
 
@@ -26,11 +26,6 @@ export class GuardsWikiService implements CanActivate, CanActivateChild, CanDeac
 
   canDeactivate(): boolean {
     console.log('GuardsWikiService.canDeactivate()');
-    return true;
-  }
-
-  resolve(): boolean {
-    console.log('GuardsWikiService.resolve()');
     return true;
   }
 

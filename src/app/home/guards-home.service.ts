@@ -10,7 +10,7 @@ import {
 import { HomeComponent } from './home.component';
 
 @Injectable()
-export class GuardsHomeService implements CanActivate, CanActivateChild, CanDeactivate<HomeComponent>, Resolve<HomeComponent>, CanLoad {
+export class GuardsHomeService implements CanActivate, CanActivateChild, CanDeactivate<HomeComponent>, CanLoad {
 
   constructor() { }
 
@@ -26,11 +26,6 @@ export class GuardsHomeService implements CanActivate, CanActivateChild, CanDeac
 
   canDeactivate (): boolean {
     console.log('GuardsHomeService.canDeactivate()');
-    return true;
-  }
-
-  resolve (): boolean {
-    console.log('GuardsHomeService.resolve()');
     return true;
   }
 

@@ -14,7 +14,6 @@ const appRoutes: Routes = [
     canActivate: [GuardsHomeService],
     canActivateChild: [GuardsHomeService],
     canDeactivate: [GuardsHomeService],
-    resolve: [GuardsHomeService],
     canLoad: [GuardsHomeService],
     data: {title: 'home'}
   },

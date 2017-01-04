@@ -10,7 +10,7 @@ import {
 import { TopComponent } from './top.component';
 
 @Injectable()
-export class GuardsTopService implements CanActivate, CanActivateChild, CanDeactivate<TopComponent>, Resolve<TopComponent>, CanLoad {
+export class GuardsTopService implements CanActivate, CanActivateChild, CanDeactivate<TopComponent>, CanLoad {
 
   constructor() { }
 
@@ -26,11 +26,6 @@ export class GuardsTopService implements CanActivate, CanActivateChild, CanDeact
 
   canDeactivate(): boolean {
     console.log('GuardsTopService.canDeactivate()');
-    return true;
-  }
-
-  resolve(): boolean {
-    console.log('GuardsTopService.resolve()');
     return true;
   }
 

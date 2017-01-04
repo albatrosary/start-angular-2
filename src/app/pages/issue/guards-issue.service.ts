@@ -10,7 +10,7 @@ import {
 import { IssueComponent } from './issue.component';
 
 @Injectable()
-export class GuardsIssueService implements CanActivate, CanActivateChild, CanDeactivate<IssueComponent>, Resolve<IssueComponent>, CanLoad {
+export class GuardsIssueService implements CanActivate, CanActivateChild, CanDeactivate<IssueComponent>, CanLoad {
 
   constructor() { }
 
@@ -26,11 +26,6 @@ export class GuardsIssueService implements CanActivate, CanActivateChild, CanDea
 
   canDeactivate(): boolean {
     console.log('GuardsIssueService.canDeactivate()');
-    return true;
-  }
-
-  resolve(): boolean {
-    console.log('GuardsIssueService.resolve()');
     return true;
   }
 

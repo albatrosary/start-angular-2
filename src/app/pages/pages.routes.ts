@@ -19,7 +19,6 @@ const pagesRoutes: Routes = [
     canActivate: [GuardsPagesService],
     canActivateChild: [GuardsPagesService],
     canDeactivate: [GuardsPagesService],
-    resolve: [GuardsPagesService],
     canLoad: [GuardsPagesService],
     children: [
       { path: '', redirectTo: 'top', pathMatch: 'full' },
@@ -29,7 +28,6 @@ const pagesRoutes: Routes = [
         canActivate: [GuardsTopService],
         canActivateChild: [GuardsTopService],
         canDeactivate: [GuardsTopService],
-        resolve: [GuardsTopService],
         canLoad: [GuardsTopService],
         data: { title: 'Top' }
       },
@@ -39,7 +37,6 @@ const pagesRoutes: Routes = [
         canActivate: [GuardsIssueService],
         canActivateChild: [GuardsIssueService],
         canDeactivate: [GuardsIssueService],
-        resolve: [GuardsIssueService],
         canLoad: [GuardsIssueService],
         data: { title: 'Issue' }
       },
@@ -54,7 +51,6 @@ const pagesRoutes: Routes = [
         canActivate: [GuardsWikiService],
         canActivateChild: [GuardsWikiService],
         canDeactivate: [GuardsWikiService],
-        resolve: [GuardsWikiService],
         canLoad: [GuardsWikiService],
         data: { title: 'Wiki' }
       }
