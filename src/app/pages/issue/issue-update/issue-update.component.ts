@@ -1,58 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
 
-import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/toPromise';
 
-import { IssueService } from '../issue.service';
-import { Issue } from '../issue';
+import { Issue } from './issue';
 
-@Component({
-  selector: 'app-issue-update',
-  templateUrl: './issue-update.component.html',
-  styleUrls: ['./issue-update.component.scss']
-})
-export class IssueUpdateComponent implements OnInit {
+@Injectable()
+export class IssueService {
 
-  id: number;
+  private headers = new Headers({'Content-Type': 'application/json'});
 
-  title: string;
+  private url = '/api/issues';
 
-  desc: string;
+  constructor(private http: Http) { }
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private issueService: IssueService
-  ) {
+  private issues: Issue[] = [];
+
+  public delete(index: number): Promise<Issue[]> {
+    return this.http.delete(this.url + `/${index}`, { headers: this.headers })
+      .toPromise()
+      .then(() => this.issues.splice(index, 1))
+      .catch(this.handleError);
   }
 
-  ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => {
-        this.id = +params['id'];
-        return this.issueService.getIssue(this.id);
-      })
-      .subscribe(issue => {
-        this.title = issue.title;
-        this.desc = issue.desc;
-      });
+  public add(issue: Issue): void {
+    this.http.post(this.url, JSON.stringify(issue), { headers: this.headers })
+      .toPromise()
+      .then(() => this.issues.push(issue))
+      .catch(this.handleError);
   }
 
-  public onSubmit(form: NgForm): void {
-
-    const issue = {
-      title: form.value.title,
-      desc: form.value.desc
+  public update(id: number, issue: Issue): void {
+    let udata = {
+      id: id,
+      issue: JSON.stringify(issue)
     };
 
-    this.issueService.update(form.value.id, issue);
-
-    this.gotoIssue();
+    this.http.put(this.url, udata, {headers: this.headers})
+      .toPromise()
+      .catch(this.handleError);
   }
 
-  private gotoIssue() {
-    this.router.navigate(['./pages/issue']);
+  public getList(): Promise<Issue[]> {
+    return this.http.get(this.url)
+      .toPromise()
+      .then(response => {
+        this.issues = response.json();
+        return this.issues;
+      })
+      .catch(this.handleError);
+  }
+
+  public getIssue(id: number): Promise<Issue> {
+    return this.http.get(this.url + `/${id}`)
+      .toPromise()
+      .then(response => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
   }
 
 }
