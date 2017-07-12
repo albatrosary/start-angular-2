@@ -13,9 +13,9 @@ export class IssueService {
 
   private url = '/api/issues';
 
-  private issues: Issue[] = [];
-
   constructor(private http: Http) { }
+
+  private issues: Issue[] = [];
 
   public delete(index: number): Promise<Issue[]> {
     return this.http.delete(this.url + `/${index}`, { headers: this.headers })
@@ -42,7 +42,7 @@ export class IssueService {
       .catch(this.handleError);
   }
 
-  public allList(): Promise<Issue[]> {
+  public getList(): Promise<Issue[]> {
     return this.http.get(this.url)
       .toPromise()
       .then(response => {
@@ -56,8 +56,7 @@ export class IssueService {
     return this.http.get(this.url + `/${id}`)
       .toPromise()
       .then(response => {
-        this.issues = response.json();
-        return this.issues;
+        return response.json();
       })
       .catch(this.handleError);
   }
@@ -66,4 +65,5 @@ export class IssueService {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
+
 }
